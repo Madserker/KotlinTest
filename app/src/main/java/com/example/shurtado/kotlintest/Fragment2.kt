@@ -16,11 +16,9 @@ class Fragment2 : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cm = CharactersManager()
-        cm.doRequest()
-        while (cm.MarvelList.isEmpty()) {
-            textitoguapo.text = cm.MarvelList[0].name
-        }
+
+
+
 
 
     }
