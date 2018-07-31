@@ -15,7 +15,7 @@ class ListPresenter(var listView : FragmentView){
 
 
     fun doRequest(){
-        val call = ServiceGenerator().getCharacters("1", Constants.API_KEY, Constants.HASH)
+        val call = ServiceGenerator().getCharacters("1", Constants.API_KEY, Constants.HASH, 100)
 
         call.enqueue(object : Callback<MarvelCharactersResponse> {
             override fun onFailure(call: Call<MarvelCharactersResponse>?, t: Throwable?) {

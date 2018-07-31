@@ -12,7 +12,9 @@ interface MarvelApi{
     fun getCharacters(
             @Query("ts") timestamp : String,
             @Query("apikey") apikey : String,
-            @Query("hash") hash : String) : Call<MarvelCharactersResponse>
+            @Query("hash") hash : String,
+            @Query("limit") limit : Int)
+            : Call<MarvelCharactersResponse>
 }
 
 

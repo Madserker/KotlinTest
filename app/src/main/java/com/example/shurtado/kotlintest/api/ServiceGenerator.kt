@@ -24,8 +24,8 @@ class ServiceGenerator {
         marvelApi = builder.create(MarvelApi::class.java)
 }
 
-    fun getCharacters(ts:String,apikey:String,hash:String) : Call<MarvelCharactersResponse>{
-        return marvelApi.getCharacters(ts,apikey,hash)
+    fun getCharacters(ts:String,apikey:String,hash:String,limit: Int) : Call<MarvelCharactersResponse>{
+        return marvelApi.getCharacters(ts,apikey,hash,limit)
     }
 
 
