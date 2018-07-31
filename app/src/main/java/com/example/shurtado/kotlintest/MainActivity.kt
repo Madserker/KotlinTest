@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         var fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.add(R.id.container, Fragment1())
-        fragmentTransaction.add(R.id.container, Fragment2())
+        //fragmentTransaction.add(R.id.container, Fragment2())
         fragmentTransaction.commit()
     }
 
