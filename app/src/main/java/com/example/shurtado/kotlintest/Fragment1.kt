@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.util.Log
 import android.widget.*
 import android.widget.ListAdapter
+import com.bumptech.glide.annotation.GlideModule
 import com.example.shurtado.kotlintest.Presenter.ListPresenter
 import com.example.shurtado.kotlintest.model.MarvelCharactersDataResponse
 import kotlinx.android.synthetic.main.fragment_fragment1.*
@@ -22,7 +23,6 @@ class Fragment1 : Fragment(), FragmentView {
 
 
     override fun showList(marvelList : List<MarvelCharactersDataResponse>) {
-        //Log.e("RESULT","asd")
         listView = recipe_list_view
         listView.adapter = ListAdapter(activity.applicationContext,marvelList)
     }
@@ -33,18 +33,13 @@ class Fragment1 : Fragment(), FragmentView {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Create an ArrayAdapter from List
-
-
-        // Finally, data bind the list view object with adapter
-
-        //listView.adapter = ListAdapter(activity.applicationContext)
         presenter.doRequest()
 
 
     }
 }
+
+
 
 class ListAdapter(context : Context, list : List<MarvelCharactersDataResponse>): BaseAdapter(){
 
@@ -68,6 +63,7 @@ class ListAdapter(context : Context, list : List<MarvelCharactersDataResponse>):
         return mList.size
     }
 
+    //Se ejecuta por cada fila de la tabla
     override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
         val textView = TextView(mContext)
         textView.text = mList[position].name
